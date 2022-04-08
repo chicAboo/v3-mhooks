@@ -12,7 +12,7 @@
 
 <script lang="ts" setup>
 import { ref, watch } from "vue";
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData(count: number) {
   return new Promise((resolve) => {

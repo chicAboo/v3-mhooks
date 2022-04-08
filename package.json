@@ -1,10 +1,10 @@
 {
-  "name": "vue3Hooks",
+  "name": "v3-hooks",
   "version": "0.0.1",
   "description": "vue3 hooks",
   "repository": {
     "type": "git",
-    "url": "ssh://git@git.sankuai.com/cs-fe/vue3Hooks.git"
+    "url": "ssh://git@git.sankuai.com/cs-fe/v3-hooks.git"
   },
   "license": "ISC",
   "author": "zhutao20",

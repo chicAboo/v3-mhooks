@@ -79,7 +79,7 @@ useRequest 是一个强大的异步数据管理 hooks，在 vue3 项目中的网
 import { createApp } from "vue";
 import App from "./App.vue";
 
-import { setGlobalOptions } from "vue3Hooks";
+import { setGlobalOptions } from "v3-hooks";
 
 setGlobalOptions({
   manual: true,
@@ -125,7 +125,7 @@ const { loading, data } = useRequest({
 我们可以定义好请求的函数，请求方法可以是 Ajax，可以是 axios，可以是 fetch 等库，封装好请求函数传入 useRequest，该函数返回一个 Promise 对象，最终如果成功则将值传给 data，如果失败传给 error，如下：
 
 ```ts
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 import axios from "axios";
 
 function getMockData() {
@@ -158,7 +158,7 @@ const { loading, data } = useRequest(getMockData);
 </template>
 
 <script lang="ts">
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 import axios from "axios";
 
 function getMockData() {
@@ -193,7 +193,7 @@ const { loading, data } = useRequest(getMockData, { manual: true });
 </template>
 
 <script lang="ts" setup>
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -223,7 +223,7 @@ const onChangeName = () => {
 </template>
 
 <script lang="ts" setup>
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -242,7 +242,7 @@ const { loading, data, run } = useRequest(getMockData, {
 默认情况，屏幕不可见时会暂停轮询，当屏幕聚焦时，重新激活轮询。如果想在屏幕不可见时也执行轮询，则设置 pollingWhenHidden 为 true，如下所示：
 
 ```ts
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -261,7 +261,7 @@ const { loading, data, run } = useRequest(getMockData, {
 默认情况，在断网时会停止轮询，当网络恢复正常时，重新激活轮询。如果需要在断网时也发起轮询，设置 pollingWhenOffline 为 true，如下所示：
 
 ```ts
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -280,7 +280,7 @@ const { loading, data, run } = useRequest(getMockData, {
 当设置`refreshOnWindowFocus`为 true 时，当浏览器聚焦时，会重新发起请求，如下：
 
 ```ts
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -296,7 +296,7 @@ const { loading, data, run } = useRequest(getMockData, {
 为了防止频繁切换聚焦，频繁请求，设置了间隔大于 5000ms 时，会重新发起请求。我们还可以通过设置`refocusTimespan`来自定义间隔的毫秒数，如下：
 
 ```ts
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -319,7 +319,7 @@ const { loading, data, run } = useRequest(getMockData, {
 useRequest 提供了防抖请求，当频繁触发请求时，可以设置 debouce 为 true，在指定时间内会将其合成一次执行，默认是 1s。如下：
 
 ```ts
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -340,7 +340,7 @@ const { loading, data, run } = useRequest(getMockData, {
 useRequest 提供了节流请求，如果频繁触发 run 方法，则可以通过设置 throttle 为 true，将开启节流，如下：
 
 ```ts
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -371,7 +371,7 @@ const { loading, data, run } = useRequest(getMockData, {
 
 <script lang="ts" setup>
 import { ref, watch } from "vue";
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -410,7 +410,7 @@ const onBlur = (evt: any) => {
 
 <script lang="ts" setup>
 import { ref, watch } from "vue";
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -448,7 +448,7 @@ const { loading, data, run } = useRequest(getMockData, {
 
 <script lang="ts" setup>
 import { ref, watch } from "vue";
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -484,7 +484,7 @@ const { loading, data, run } = useRequest(getMockData, {
 
 <script lang="ts" setup>
 import { ref, watch } from "vue";
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -520,7 +520,7 @@ const { loading, data, run } = useRequest(getMockData, {
 
 <script lang="ts" setup>
 import { ref, watch } from "vue";
-import { useRequest } from "vue3Hooks";
+import { useRequest } from "v3-hooks";
 
 function getMockData() {
   return new Promise((resolve) => {

@@ -22,7 +22,7 @@ useInterval 是用来处理 setInterval 函数的 Hook，有三个参数：
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { useInterval } from "vue3Hooks";
+import { useInterval } from "v3-hooks";
 
 const count = ref(0);
 const delay = ref(1000);

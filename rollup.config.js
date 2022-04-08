@@ -15,14 +15,14 @@ const RollUpConfig = {
       format: "esm",
     },
     {
-      name: "vue3Hooks",
+      name: "v3-hooks",
       file: "./dist/index.cjs.js",
       format: "commonjs",
       exports: "named",
     },
     {
-      name: "vue3Hooks",
-      file: "./dist/vue3Hooks.min.js",
+      name: "v3-hooks",
+      file: "./dist/v3-hooks.min.js",
       format: "umd",
       exports: "named",
       extend: true,

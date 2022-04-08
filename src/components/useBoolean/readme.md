@@ -19,7 +19,7 @@ useBoolean 用于管理 boolean 状态的 Hook，若不传参，默认值为 fal
 </template>
 
 <script lang="ts" setup>
-import { useBoolean } from "vue3Hooks";
+import { useBoolean } from "v3-hooks";
 const [toggleValue, { toggle, set, setTrue, setFalse }] = useBoolean();
 </script>
 ```
