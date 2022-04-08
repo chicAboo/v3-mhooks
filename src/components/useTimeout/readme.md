@@ -18,7 +18,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useTimeout } from 'v3-hooks';
+import { useTimeout } from 'v3-mhooks';
 
 const count = ref(0);
 

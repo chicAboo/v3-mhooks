@@ -17,7 +17,7 @@ useLockFn 用于给异步函数一个锁，防止并发执行，多用于保存�
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { useLockFn } from "v3-hooks";
+import { useLockFn } from "v3-mhooks";
 
 const count = ref(0);
 

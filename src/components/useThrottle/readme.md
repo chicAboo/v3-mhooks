@@ -20,7 +20,7 @@ useThrottle 是用来处理节流值的 Hook，有两个参数：
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { useThrottle } from "v3-hooks";
+import { useThrottle } from "v3-mhooks";
 
 const inputValue = ref("");
 

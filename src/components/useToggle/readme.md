@@ -22,7 +22,7 @@ useToggle 是用于在两个状态值间切换的 Hook，参数可以为 0 个�
 </template>
 
 <script lang="ts" setup>
-import { useToggle } from "v3-hooks";
+import { useToggle } from "v3-mhooks";
 const [toggleValue, { toggle, set, setDefaultValue, setReverseValue }] =
   useToggle("first", "last");
 </script>

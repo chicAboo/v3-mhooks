@@ -14,7 +14,7 @@
     "baseUrl": "./",
     "types": ["jest", "@vue/test-utils"],
     "paths": {
-      "v3-hooks": ["./src/index.ts"]
+      "v3-mhooks": ["./src/index.ts"]
     }
   },
   "include": ["src", "**/__tests__/**/*"],

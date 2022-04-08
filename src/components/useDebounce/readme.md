@@ -22,7 +22,7 @@ useDebounce 是用来处理防抖值的 Hook，参数有两个：
 
 <script lang="ts" setup>
 import { ref, onMounted } from "vue";
-import { useDebounce } from "v3-hooks";
+import { useDebounce } from "v3-mhooks";
 const count = ref(0);
 const debounceValue = useDebounce(count, { wait: 3000 });
 

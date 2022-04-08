@@ -19,7 +19,7 @@ useSetState 管理 object 类型 state 的 Hook，入参只能是一个 Object�
 </template>
 
 <script lang="ts" setup>
-import { useSetState } from "v3-hooks";
+import { useSetState } from "v3-mhooks";
 const [state, setState] = useSetState({ name: "zhutao", age: 31, count: 0 });
 </script>
 ```

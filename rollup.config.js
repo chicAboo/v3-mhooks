@@ -15,14 +15,14 @@ const RollUpConfig = {
       format: "esm",
     },
     {
-      name: "v3-hooks",
+      name: "v3-mhooks",
       file: "./dist/index.cjs.js",
       format: "commonjs",
       exports: "named",
     },
     {
-      name: "v3-hooks",
-      file: "./dist/v3-hooks.min.js",
+      name: "v3-mhooks",
+      file: "./dist/v3-mhooks.min.js",
       format: "umd",
       exports: "named",
       extend: true,

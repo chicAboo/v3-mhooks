@@ -7,7 +7,7 @@ export default defineConfig({
   clearScreen: false,
   resolve: {
     alias: {
-      v3-hooks: path.resolve(__dirname, "./src/index.ts"),
+      v3-mhooks: path.resolve(__dirname, "./src/index.ts"),
     },
   },
   plugins: [vue(), vueJsx()],

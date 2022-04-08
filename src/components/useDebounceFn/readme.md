@@ -22,7 +22,7 @@ useDebounceFn 是用来处理防抖函数的 Hook，有两个参数：
 
 <script lang="ts" setup>
 import { onMounted } from "vue";
-import { useSetState, useDebounceFn } from "v3-hooks";
+import { useSetState, useDebounceFn } from "v3-mhooks";
 const [state, setState] = useSetState({ count: 0 });
 const { run, flush, cancel } = useDebounceFn(
   () => {
