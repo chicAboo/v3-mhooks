@@ -7,7 +7,7 @@
     "url": "ssh://git@git.sankuai.com/cs-fe/v3-hooks.git"
   },
   "license": "ISC",
-  "author": "zhutao20",
+  "author": "chicaboo",
   "main": "index.ts",
   "scripts": {
     "prepare": "husky install",
