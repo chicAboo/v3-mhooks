@@ -1,0 +1,8 @@
+export enum LISTENER_TYPE {
+  FOCUS_LISTENER = 'FOCUS_LISTENER', // 窗口聚焦
+  VISIBLE_LISTENER = 'VISIBLE_LISTENER', // 选项卡可见或隐藏
+  RECONNECT_LISTENER = 'RECONNECT_LISTENER', // 重新连接
+}
+
+// 默认query key
+export const QUERY_DEFAULT_KEY = '__QUERY_DEFAULT_KEY__';
