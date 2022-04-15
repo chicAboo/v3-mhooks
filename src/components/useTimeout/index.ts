@@ -1,4 +1,4 @@
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue-demi';
 
 /**
  * 用于处理setTimeout函数的hook

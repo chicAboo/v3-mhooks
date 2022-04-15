@@ -1,28 +1,6 @@
-# Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-### [0.0.5](https://github.com/chicAboo/v3-mhooks/compare/v0.0.4...v0.0.5) (2022-04-15)
-
-### 0.0.4 (2022-04-15)
-
-
-### Features
-
-* add vue3 hooks ([64799f2](https://github.com/chicAboo/v3-mhooks/commit/64799f268f77317a6fa75d6d917396673ffb97e6))
-
-
-### Bug Fixes
-
-* change main index ([fee4dab](https://github.com/chicAboo/v3-mhooks/commit/fee4dab16d7a8f55016e2282445ecfd5b2ce2d34))
-* change package name ([a22318a](https://github.com/chicAboo/v3-mhooks/commit/a22318ab452c7c5ccba5c5ce861d5eb3963f3d52))
-* change package name ([5e8554d](https://github.com/chicAboo/v3-mhooks/commit/5e8554dc438f27682793730dfe448896f944df4c))
-* change package name ([313f88a](https://github.com/chicAboo/v3-mhooks/commit/313f88a44a62e862b59b6f6fcc2ed42525542ec2))
-* change package name ([4dde01e](https://github.com/chicAboo/v3-mhooks/commit/4dde01e1ff017ba4967affb9fde3fd115eb1ec18))
-
 # 发布日志
 
-## [v0.0.3] - 2022-04-12
+## [v0.1.0] - 2022-04-15
 
 - 修改：发包的入口文件更改为打包后的路径；
 - 修改：缺少@babel/runtime-corejs3 包，在使用过程中会报错；

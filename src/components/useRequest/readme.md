@@ -76,16 +76,16 @@ useRequest 是一个强大的异步数据管理 hooks，在 vue3 项目中的网
 通过导出的 `setGlobalOptions()`方法，可以控制一些配置，避免频繁配置相同的参数。在每个项目的入口处进行配置，如下：
 
 ```ts
-import { createApp } from "vue";
-import App from "./App.vue";
+import { createApp } from 'vue';
+import App from './App.vue';
 
-import { setGlobalOptions } from "v3-mhooks";
+import { setGlobalOptions } from 'v3-mhooks';
 
 setGlobalOptions({
   manual: true,
 });
 
-createApp(App).mount("#app");
+createApp(App).mount('#app');
 ```
 
 ### 数据请求
@@ -101,7 +101,7 @@ const { loading, data, error } = useRequest(service, options);
 如果请求的接口足够简单，可以传一个接口字符串，后台会使用 axios 进行 get 请求
 
 ```ts
-const { loading, data } = useRequest("api/simple-api");
+const { loading, data } = useRequest('api/simple-api');
 ```
 
 #### 对象
@@ -110,12 +110,12 @@ const { loading, data } = useRequest("api/simple-api");
 
 ```ts
 const { loading, data } = useRequest({
-  url: "http://www.tianqiapi.com/api",
-  method: "GET",
+  url: 'http://www.tianqiapi.com/api',
+  method: 'GET',
   params: {
-    version: "v9",
-    appid: "23035354",
-    appsecret: "8YvlPNrz",
+    version: 'v9',
+    appid: '23035354',
+    appsecret: '8YvlPNrz',
   },
 });
 ```
@@ -125,15 +125,15 @@ const { loading, data } = useRequest({
 我们可以定义好请求的函数，请求方法可以是 Ajax，可以是 axios，可以是 fetch 等库，封装好请求函数传入 useRequest，该函数返回一个 Promise 对象，最终如果成功则将值传给 data，如果失败传给 error，如下：
 
 ```ts
-import { useRequest } from "v3-mhooks";
-import axios from "axios";
+import { useRequest } from 'v3-mhooks';
+import axios from 'axios';
 
 function getMockData() {
-  return axios.get("http://www.tianqiapi.com/api", {
+  return axios.get('http://www.tianqiapi.com/api', {
     params: {
-      version: "v9",
-      appid: "23035354",
-      appsecret: "8YvlPNrz",
+      version: 'v9',
+      appid: '23035354',
+      appsecret: '8YvlPNrz',
     },
   });
 }
@@ -148,7 +148,7 @@ const { loading, data } = useRequest(getMockData);
 ```vue
 <template>
   <div class="box">
-    <span>{{ loading ? "正在请求中..." : "" }}</span>
+    <span>{{ loading ? '正在请求中...' : '' }}</span>
     <p>{{ data }}</p>
 
     <div class="op">
@@ -158,15 +158,15 @@ const { loading, data } = useRequest(getMockData);
 </template>
 
 <script lang="ts">
-import { useRequest } from "v3-mhooks";
-import axios from "axios";
+import { useRequest } from 'v3-mhooks';
+import axios from 'axios';
 
 function getMockData() {
-  return axios.get("http://www.tianqiapi.com/api", {
+  return axios.get('http://www.tianqiapi.com/api', {
     params: {
-      version: "v9",
-      appid: "23035354",
-      appsecret: "8YvlPNrz",
+      version: 'v9',
+      appid: '23035354',
+      appsecret: '8YvlPNrz',
     },
   });
 }
@@ -182,7 +182,7 @@ const { loading, data } = useRequest(getMockData, { manual: true });
 ```vue
 <template>
   <div class="box">
-    <span>{{ loading ? "正在请求中..." : "" }}</span>
+    <span>{{ loading ? '正在请求中...' : '' }}</span>
     <p>{{ data }}</p>
 
     <div class="op">
@@ -193,20 +193,18 @@ const { loading, data } = useRequest(getMockData, { manual: true });
 </template>
 
 <script lang="ts" setup>
-import { useRequest } from "v3-mhooks";
+import { useRequest } from 'v3-mhooks';
 
 function getMockData() {
   return new Promise((resolve) => {
-    resolve("张三");
+    resolve('张三');
   });
 }
 
-const { loading, data, mutate, run } = useRequest(getMockData, {
-  manual: true,
-});
+const { loading, data, mutate, run } = useRequest(getMockData, { manual: true });
 
 const onChangeName = () => {
-  mutate("李四");
+  mutate('李四');
 };
 </script>
 ```
@@ -223,7 +221,7 @@ const onChangeName = () => {
 </template>
 
 <script lang="ts" setup>
-import { useRequest } from "v3-mhooks";
+import { useRequest } from 'v3-mhooks';
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -242,7 +240,7 @@ const { loading, data, run } = useRequest(getMockData, {
 默认情况，屏幕不可见时会暂停轮询，当屏幕聚焦时，重新激活轮询。如果想在屏幕不可见时也执行轮询，则设置 pollingWhenHidden 为 true，如下所示：
 
 ```ts
-import { useRequest } from "v3-mhooks";
+import { useRequest } from 'v3-mhooks';
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -261,7 +259,7 @@ const { loading, data, run } = useRequest(getMockData, {
 默认情况，在断网时会停止轮询，当网络恢复正常时，重新激活轮询。如果需要在断网时也发起轮询，设置 pollingWhenOffline 为 true，如下所示：
 
 ```ts
-import { useRequest } from "v3-mhooks";
+import { useRequest } from 'v3-mhooks';
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -280,7 +278,7 @@ const { loading, data, run } = useRequest(getMockData, {
 当设置`refreshOnWindowFocus`为 true 时，当浏览器聚焦时，会重新发起请求，如下：
 
 ```ts
-import { useRequest } from "v3-mhooks";
+import { useRequest } from 'v3-mhooks';
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -296,7 +294,7 @@ const { loading, data, run } = useRequest(getMockData, {
 为了防止频繁切换聚焦，频繁请求，设置了间隔大于 5000ms 时，会重新发起请求。我们还可以通过设置`refocusTimespan`来自定义间隔的毫秒数，如下：
 
 ```ts
-import { useRequest } from "v3-mhooks";
+import { useRequest } from 'v3-mhooks';
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -319,7 +317,7 @@ const { loading, data, run } = useRequest(getMockData, {
 useRequest 提供了防抖请求，当频繁触发请求时，可以设置 debouce 为 true，在指定时间内会将其合成一次执行，默认是 1s。如下：
 
 ```ts
-import { useRequest } from "v3-mhooks";
+import { useRequest } from 'v3-mhooks';
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -340,7 +338,7 @@ const { loading, data, run } = useRequest(getMockData, {
 useRequest 提供了节流请求，如果频繁触发 run 方法，则可以通过设置 throttle 为 true，将开启节流，如下：
 
 ```ts
-import { useRequest } from "v3-mhooks";
+import { useRequest } from 'v3-mhooks';
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -363,15 +361,15 @@ const { loading, data, run } = useRequest(getMockData, {
 ```vue
 <template>
   <div class="box">
-    <span>{{ loading ? "正在请求中..." : "" }}</span>
+    <span>{{ loading ? '正在请求中...' : '' }}</span>
     <p>{{ data }}</p>
     <input @blur="onBlur" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from "vue";
-import { useRequest } from "v3-mhooks";
+import { ref, watch } from 'vue';
+import { useRequest } from 'v3-mhooks';
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -398,7 +396,7 @@ const onBlur = (evt: any) => {
 ```vue
 <template>
   <div class="box">
-    <span>{{ loading ? "正在请求中..." : "" }}</span>
+    <span>{{ loading ? '正在请求中...' : '' }}</span>
     <p>{{ data }}</p>
 
     <div class="op">
@@ -409,8 +407,8 @@ const onBlur = (evt: any) => {
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from "vue";
-import { useRequest } from "v3-mhooks";
+import { ref, watch } from 'vue';
+import { useRequest } from 'v3-mhooks';
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -437,7 +435,7 @@ const { loading, data, run } = useRequest(getMockData, {
 ```vue
 <template>
   <div class="box">
-    <span>{{ loading ? "正在请求中..." : "" }}</span>
+    <span>{{ loading ? '正在请求中...' : '' }}</span>
     <p>{{ data }}</p>
 
     <div class="op">
@@ -447,8 +445,8 @@ const { loading, data, run } = useRequest(getMockData, {
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from "vue";
-import { useRequest } from "v3-mhooks";
+import { ref, watch } from 'vue';
+import { useRequest } from 'v3-mhooks';
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -459,7 +457,7 @@ function getMockData() {
 }
 
 const { loading, data, run } = useRequest(getMockData, {
-  cacheKey: "date",
+  cacheKey: 'date',
 });
 </script>
 ```
@@ -473,7 +471,7 @@ const { loading, data, run } = useRequest(getMockData, {
 ```vue
 <template>
   <div class="box">
-    <span>{{ loading ? "正在请求中..." : "" }}</span>
+    <span>{{ loading ? '正在请求中...' : '' }}</span>
     <p>{{ data }}</p>
 
     <div class="op">
@@ -483,8 +481,8 @@ const { loading, data, run } = useRequest(getMockData, {
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from "vue";
-import { useRequest } from "v3-mhooks";
+import { ref, watch } from 'vue';
+import { useRequest } from 'v3-mhooks';
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -493,7 +491,7 @@ function getMockData() {
 }
 
 const { loading, data, run } = useRequest(getMockData, {
-  cacheKey: "date",
+  cacheKey: 'date',
   cacheTime: 10000,
 });
 </script>
@@ -508,7 +506,7 @@ const { loading, data, run } = useRequest(getMockData, {
 ```vue
 <template>
   <div class="box">
-    <span>{{ loading ? "正在请求中..." : "" }}</span>
+    <span>{{ loading ? '正在请求中...' : '' }}</span>
     <p>{{ data }}</p>
 
     <div class="op">
@@ -519,8 +517,8 @@ const { loading, data, run } = useRequest(getMockData, {
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from "vue";
-import { useRequest } from "v3-mhooks";
+import { ref, watch } from 'vue';
+import { useRequest } from 'v3-mhooks';
 
 function getMockData() {
   return new Promise((resolve) => {
@@ -531,12 +529,12 @@ function getMockData() {
 }
 
 const { loading, data, run } = useRequest(getMockData, {
-  cacheKey: "date",
+  cacheKey: 'date',
   staleTime: 10000,
 });
 
 watch(data, (newData) => {
-  console.log("test", newData);
+  console.log('test', newData);
 });
 </script>
 ```

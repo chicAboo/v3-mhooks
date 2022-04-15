@@ -1,5 +1,5 @@
-import type { Ref } from 'vue';
-import { ref, watchEffect, onMounted, onUnmounted, isRef } from 'vue';
+import type { Ref } from 'vue-demi';
+import { ref, watchEffect, isRef } from 'vue-demi';
 
 interface Options {
   immediate?: boolean;

@@ -1,4 +1,4 @@
-import type { Ref } from 'vue';
+import type { Ref } from 'vue-demi';
 import useToggle from '../useToggle';
 
 export interface Actions {

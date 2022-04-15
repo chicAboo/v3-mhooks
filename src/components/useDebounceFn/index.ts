@@ -1,4 +1,4 @@
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue-demi';
 import debounce from 'lodash/debounce';
 
 export interface DebounceOptions {

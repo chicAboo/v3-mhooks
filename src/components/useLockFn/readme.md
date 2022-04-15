@@ -16,8 +16,8 @@ useLockFn 用于给异步函数一个锁，防止并发执行，多用于保存�
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-import { useLockFn } from "v3-mhooks";
+import { ref } from 'vue';
+import { useLockFn } from 'v3-mhooks';
 
 const count = ref(0);
 
@@ -30,11 +30,11 @@ function mockApiPromise() {
 }
 
 const submit = useLockFn(async () => {
-  console.log("start to submit");
+  console.log('start to submit');
   await mockApiPromise();
 
   count.value += 1;
-  console.log("submit finished");
+  console.log('submit finished');
 });
 </script>
 ```

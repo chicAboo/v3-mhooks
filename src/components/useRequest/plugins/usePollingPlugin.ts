@@ -1,5 +1,5 @@
-import type { Ref } from 'vue';
-import { onUnmounted } from 'vue';
+import type { Ref } from 'vue-demi';
+import { onUnmounted } from 'vue-demi';
 import type { EventFunc, ListenerSet } from '../utils/subscriber';
 import subscriber from '../utils/subscriber';
 import { isNil, isDocumentVisibility, isOnline } from '../utils';

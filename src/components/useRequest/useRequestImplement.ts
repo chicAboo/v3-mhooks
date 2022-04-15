@@ -1,5 +1,6 @@
-import { ref, watch, onMounted } from 'vue';
-import { isFunction } from './utils';
+import type { Ref } from 'vue-demi';
+import { ref, watch, onMounted } from 'vue-demi';
+import { isFunction, resolvedPromise } from './utils';
 import type { ServiceQuery, Options, Plugins, Mutate } from './types';
 import { getGlobalOptions } from './utils/globalConfig';
 import useDebounceFn from '../useDebounceFn';
@@ -43,10 +44,10 @@ function useRequestImplement<R, P extends any[]>(
     onAfter = undefined,
   } = { ...getGlobalOptions(), ...options };
 
-  const data = ref();
+  const data = ref() as Ref<R>;
   const loading = ref(false);
   const error = ref();
-  const params = ref();
+  const params = ref() as Ref<P>;
 
   const count = ref(0);
   const delayLoadingTimer = ref();
@@ -98,6 +99,7 @@ function useRequestImplement<R, P extends any[]>(
             onSuccess(res, args);
           }
         }
+        return resolvedPromise;
       })
       .catch((err: any) => {
         if (count.value === currentCount) {
@@ -109,6 +111,7 @@ function useRequestImplement<R, P extends any[]>(
             onError(err, args);
           }
           console.error(err);
+          return resolvedPromise;
         }
       })
       .finally(() => {
@@ -142,11 +145,11 @@ function useRequestImplement<R, P extends any[]>(
 
     if (debounce) {
       debounceFn(...args);
-      return;
+      return resolvedPromise;
     }
     if (throttle) {
       throttleFn(...args);
-      return;
+      return resolvedPromise;
     }
 
     return fetch(...args);

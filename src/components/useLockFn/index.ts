@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { ref } from 'vue-demi';
 
 /**
  * 用于给异步函数增加一个锁，防止并发执行

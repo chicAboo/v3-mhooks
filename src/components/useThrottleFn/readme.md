@@ -21,14 +21,14 @@ useThrottleFn 是用来处理节流函数的 Hook，有两个参数：
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from "vue";
-import { useSetState, useDebounceFn } from "v3-mhooks";
+import { onMounted } from 'vue';
+import { useSetState, useDebounceFn } from 'v3-mhooks';
 const [state, setState] = useSetState({ count: 0 });
 const { run, flush, cancel } = useDebounceFn(
   () => {
     setState({ count: state.value.count + 1 });
   },
-  { wait: 5000, maxWait: 2000 },
+  { wait: 5000, maxWait: 2000 }
 );
 </script>
 ```

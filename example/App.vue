@@ -1,35 +1,19 @@
 <template>
   <div class="box">
     <!-- <span>{{ loading ? '正在请求中...' : '' }}</span> -->
-    <p>{{ data }}</p>
+    <p>{{ `${isModal}` }}</p>
 
     <div class="op">
-      <button @click="run()">请求</button>
-      <button @click="onChangeName">改变名称为李四</button>
+      <button @click="toggle">请求</button>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, watch } from "vue";
-import { useRequest } from "v3-mhooks";
+import { ref, watch } from 'vue';
+import { useBoolean } from 'v3-mhooks';
 
-function getMockData(count: number) {
-  return new Promise((resolve) => {
-    // setTimeout(() => {
-    resolve(count);
-    // }, 1000);
-  });
-}
-let count = 0;
-const { loading, data, run } = useRequest(() => getMockData((count += 1)), {
-  throttle: true,
-  manual: true,
-});
-
-watch(data, (newData) => {
-  console.log("test", newData);
-});
+const [isModal, { toggle }] = useBoolean();
 </script>
 
 <style>

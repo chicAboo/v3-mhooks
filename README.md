@@ -25,7 +25,7 @@ import {
   useTimeout,
   useInterval,
   useRequest,
-} from "v3-mhooks";
+} from 'v3-mhooks';
 ```
 
 ## hooks 列表
