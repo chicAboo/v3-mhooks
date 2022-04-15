@@ -11,7 +11,4 @@ export default defineConfig({
     },
   },
   plugins: [vue(), vueJsx()],
-  optimizeDeps: {
-    exclude: ['vue-demi'],
-  },
 });

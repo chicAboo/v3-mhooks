@@ -1,4 +1,4 @@
-import { ref, onMounted } from 'vue-demi';
+import { ref, onMounted } from 'vue';
 import throttle from 'lodash/throttle';
 
 export interface ThrottleOptions {

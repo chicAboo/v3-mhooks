@@ -1,4 +1,4 @@
-import { ref } from 'vue-demi';
+import { ref } from 'vue';
 
 type RetryPlugin = {
   retryCount: number; // 错误重试次数

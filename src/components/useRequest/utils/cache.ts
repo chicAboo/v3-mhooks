@@ -1,4 +1,5 @@
 import type { UnWrapRefObject, State } from '../types';
+import { isNil } from './index';
 
 type CacheKey = string | number;
 type CacheResultType<T> = {

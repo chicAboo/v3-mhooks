@@ -1,5 +1,5 @@
-import type { UnwrapRef, Ref } from 'vue-demi';
-import { ref, watch } from 'vue-demi';
+import type { UnwrapRef, Ref } from 'vue';
+import { ref, watch } from 'vue';
 import useThrottleFn from '../useThrottleFn';
 import type { ThrottleOptions } from '../useThrottleFn';
 

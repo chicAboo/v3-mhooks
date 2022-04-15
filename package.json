@@ -1,6 +1,6 @@
 {
   "name": "v3-mhooks",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "vue3 hooks",
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "hooks"
   ],
   "license": "ISC",
-  "author": "zhutao20",
+  "author": "chicaboo",
   "main": "dist/index.cjs.js",
   "unpkg": "dist/mhooks.min.js",
   "module": "dist/index.es.js",
@@ -34,10 +34,7 @@
     "lint-staged": "lint-staged",
     "start": "yarn vite ./example",
     "test": "jest --coverage",
-    "vite": "vite --config ./vite.config.ts",
-    "publishing": "np",
-    "release": "yarn build && yarn publishing",
-    "changelog": "standard-version && standard-version -i CHANGELOG.md"
+    "vite": "vite --config ./vite.config.ts"
   },
   "husky": {
     "hooks": {
@@ -84,7 +81,6 @@
     "jest": "^27.5.1",
     "jest-environment-jsdom-global": "^3.0.0",
     "lint-staged": "^12.3.4",
-    "np": "^7.6.1",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.67.2",
@@ -92,22 +88,12 @@
     "rollup-plugin-typescript2": "^0.31.2",
     "simple-git": "^3.2.6",
     "sort-package-json": "^1.54.0",
-    "standard-version": "^9.3.2",
     "ts-jest": "^27.1.3",
     "typescript": "^4.5.5",
     "vite": "^2.8.3",
     "vue": "^3.2.31"
   },
   "peerDependencies": {
-    "@vue/composition-api": "^1.4.9",
-    "vue": "^3.2.31 || ^2.6.10"
-  },
-  "peerDependenciesMeta": {
-    "@vue/composition-api": {
-      "optional": true
-    }
-  },
-  "dependencies": {
-    "vue-demi": "^0.12.5"
+    "vue": "^3.2.31"
   }
 }

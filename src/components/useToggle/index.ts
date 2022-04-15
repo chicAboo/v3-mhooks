@@ -1,5 +1,5 @@
-import type { UnwrapRef, Ref } from 'vue-demi';
-import { ref } from 'vue-demi';
+import type { UnwrapRef, Ref } from 'vue';
+import { ref } from 'vue';
 
 export interface Actions<T> {
   setDefaultValue: () => void;

@@ -1,4 +1,4 @@
-import { onUnmounted } from 'vue-demi';
+import { onUnmounted } from 'vue';
 import limit from '../utils/limit';
 import type { EventFunc, ListenerSet } from '../utils/subscriber';
 import subscriber from '../utils/subscriber';

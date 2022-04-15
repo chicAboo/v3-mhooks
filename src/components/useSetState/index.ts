@@ -1,5 +1,5 @@
-import type { Ref } from 'vue-demi';
-import { ref } from 'vue-demi';
+import type { Ref } from 'vue';
+import { ref } from 'vue';
 import { isFunction } from '../utils';
 
 export type SetState<S extends Record<string, any>> = <K extends keyof S>(

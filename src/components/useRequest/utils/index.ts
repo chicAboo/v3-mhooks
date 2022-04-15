@@ -1,4 +1,4 @@
-import { unref } from 'vue-demi';
+import { unref } from 'vue';
 import type { RefObject, UnRef } from '../types';
 
 export const objectToString = Object.prototype.toString;

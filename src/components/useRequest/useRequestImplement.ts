@@ -1,5 +1,5 @@
-import type { Ref } from 'vue-demi';
-import { ref, watch, onMounted } from 'vue-demi';
+import type { Ref } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { isFunction, resolvedPromise } from './utils';
 import type { ServiceQuery, Options, Plugins, Mutate } from './types';
 import { getGlobalOptions } from './utils/globalConfig';
