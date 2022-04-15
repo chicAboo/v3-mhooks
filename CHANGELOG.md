@@ -1,3 +1,14 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.0.8](https://github.com/chicAboo/v3-mhooks/compare/v0.0.7...v0.0.8) (2022-04-15)
+
+
+### Bug Fixes
+
+* 优化使用遇到的问题 ([3287ee3](https://github.com/chicAboo/v3-mhooks/commit/3287ee30ccf9c09d3a74bb573db62e16a6c12d13))
+
 # 发布日志
 
 ## [v0.1.0] - 2022-04-15
