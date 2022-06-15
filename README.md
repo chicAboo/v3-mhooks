@@ -5,7 +5,9 @@ v3-mhooks 是一套高质量可靠的 vue3 hooks 库，在当前 vue3 生态中�
 ## 安装
 
 ```ts
-mnpm install --save v3-mhooks
+npm install --save v3-mhooks
+// or
+yarn add v3-mhooks
 ```
 
 ## 使用
